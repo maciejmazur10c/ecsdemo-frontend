@@ -24,6 +24,10 @@ spec:
       - image: brentley/ecsdemo-frontend:latest
         imagePullPolicy: Always
         name: ecsdemo-frontend
+        resources:
+          requests:
+            cpu: 100m
+            memory: 300Mi
         ports:
         - containerPort: 3000
           protocol: TCP

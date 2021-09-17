@@ -25,12 +25,9 @@ spec:
         imagePullPolicy: Always
         name: ecsdemo-frontend
         resources:
-          limits:
-            cpu: 100m
-            memory: 300Mi
           requests:
-            cpu: 50m
-            memory: 150mi
+            cpu: 100m
+            memory: 300mi
         ports:
         - containerPort: 3000
           protocol: TCP

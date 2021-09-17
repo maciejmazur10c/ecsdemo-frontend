@@ -57,6 +57,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-              serviceName: ecsdemo-frontend
+              name: ecsdemo-frontend
               port:
                 number: 80

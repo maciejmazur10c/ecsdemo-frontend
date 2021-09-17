@@ -26,8 +26,8 @@ spec:
         name: ecsdemo-frontend
         resources:
           limits:
-            cpu: 100m
-            memory: 300Mi
+            cpu: 1000m
+            memory: 1000Mi
           requests:
             cpu: 50m
             memory: 150Mi

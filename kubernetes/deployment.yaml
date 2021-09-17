@@ -39,3 +39,24 @@ spec:
           value: "http://ecsdemo-crystal.app.svc.cluster.local/crystal"
         - name: NODEJS_URL
           value: "http://ecsdemo-nodejs.app.svc.cluster.local/"
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: app
+  name: ecsdemo-frontend
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  rules:
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              serviceName: ecsdemo-frontend
+              port:
+                number: 80

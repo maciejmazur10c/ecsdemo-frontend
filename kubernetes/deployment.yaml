@@ -4,9 +4,9 @@ metadata:
   name: ecsdemo-frontend
   labels:
     app: ecsdemo-frontend
-  namespace: app
+  namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: ecsdemo-frontend
@@ -29,6 +29,6 @@ spec:
           protocol: TCP
         env:
         - name: CRYSTAL_URL
-          value: "http://ecsdemo-crystal.app.svc.cluster.local/crystal"
+          value: "http://ecsdemo-crystal.default.svc.cluster.local/crystal"
         - name: NODEJS_URL
-          value: "http://ecsdemo-nodejs.app.svc.cluster.local/"
+          value: "http://ecsdemo-nodejs.default.svc.cluster.local/"

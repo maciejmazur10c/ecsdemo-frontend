@@ -40,6 +40,20 @@ spec:
         - name: NODEJS_URL
           value: "http://ecsdemo-nodejs.app.svc.cluster.local/"
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: app
+  name: ecsdemo-frontend
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: ecsdemo-frontend
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
